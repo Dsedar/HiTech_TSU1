@@ -11,7 +11,6 @@ import sverk_rover
 from simple_offboard_py import Frame, SimpleOffboard
 
 SCOUT_ID, STRIKER_ID, ROVER_ID = "drone_1", "drone_2", "rover_1"
-SCOUT_START_IN_ROVER = (0.0, -1.0)
 
 CAMERA = dict(width=640, height=480, fov=65, frame_rate=12, enable=True)
 BALLOON_RADIUS = 0.15
@@ -911,7 +910,7 @@ def main():
         if best["red"] == 0:
             raise RuntimeError("Красных шаров не найдено")
 
-        site = (best["x"] + SCOUT_START_IN_ROVER[0], best["y"] + SCOUT_START_IN_ROVER[1])
+        site = (best["x"], best["y"])
         message = channel.send("разведчик", "участок", label=best["label"],
                                x=round(site[0], 2), y=round(site[1], 2), red=best["red"],
                                extent=best["extent"])
