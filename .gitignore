@@ -1,0 +1,38 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+dist/
+build/
+.venv/
+venv/
+.pytest_cache/
+.ruff_cache/
+
+# Editors / OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Runtime artifacts
+logs/
+outputs/
+recordings/
+*.log
+*.bag
+*.db3
+
+# ML artifacts — use Git LFS or an agreed artifact store if needed
+models/
+weights/
+checkpoints/
+*.pt
+*.pth
+*.onnx
+*.engine
+
+# Local configuration/secrets
+.env
+.env.*
+!.env.example

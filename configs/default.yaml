@@ -1,0 +1,17 @@
+# Selection of module implementations is intentionally declarative.
+# The loader/registry can be implemented later without changing module contracts.
+system:
+  name: autonomous-drone-system
+  log_level: INFO
+
+modules:
+  scout: baseline
+  target_selector: max_red_count
+  rover: baseline
+  striker: baseline
+  communication: local_stub
+
+runtime:
+  # Adapter-specific values belong in a separate local config, not in algorithms.
+  mode: web_simulator
+  dry_run: true
